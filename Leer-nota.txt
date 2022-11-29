@@ -1,0 +1,6 @@
+-------------IMPORTANTE-------------
+Es necesario que los archivos php esten dentro de la carpeta htdocs.
+El prototipo necesita conexión estable a internet para enviar
+correctamente los datos.
+Importante pasar el codigo del diagrama en sketch.ino para poder
+vizualizarlo.

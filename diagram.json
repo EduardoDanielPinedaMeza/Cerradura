@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -0.67, "left": 108, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": 214.12, "left": -34.8, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 197.22,
+      "left": 276.8,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 178.74,
+      "left": -42.16,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 181.35,
+      "left": 40.67,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -153.25,
+      "left": 352.54,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -16.65,
+      "left": 394.52,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h-28.03", "v-110.42" ] ],
+    [ "servo1:V+", "esp:VIN", "red", [ "h-49.86", "v-118.16" ] ],
+    [ "servo1:PWM", "esp:D2", "gold", [ "h292.48", "v-153.58" ] ],
+    [ "bz1:1", "esp:GND.1", "black", [ "v12.74", "h-75.22", "v-143.27" ] ],
+    [ "bz1:2", "esp:D32", "gold", [ "v22.46", "h-169.59", "v-87.42", "h-77.31", "v-138" ] ],
+    [ "btn1:2.r", "esp:3V3", "red", [ "h219.6", "v-2.74" ] ],
+    [ "r1:1", "btn1:1.r", "black", [ "v0" ] ],
+    [ "r1:2", "esp:GND.2", "black", [ "v0" ] ],
+    [ "btn1:1.l", "esp:D35", "gold", [ "h-60.04", "v-4.6" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "h-277.09", "v0.42" ] ],
+    [ "lcd1:VCC", "esp:VIN", "red", [ "h-306.16", "v268.53" ] ],
+    [ "lcd1:SCL", "esp:D22", "gold", [ "h-86.69", "v121.98" ] ],
+    [ "lcd1:SDA", "esp:D21", "green", [ "h-111.08", "v167.12" ] ],
+    [ "keypad1:C4", "esp:TX2", "#8f4814", [ "v103.54", "h-283.63", "v-11.42" ] ],
+    [ "keypad1:C3", "esp:D5", "limegreen", [ "v93.22", "h-284.79", "v-8.88" ] ],
+    [ "keypad1:C2", "esp:D18", "#8f4814", [ "v85.4", "h-284.86", "v0", "h-6.25", "v-327.21" ] ],
+    [ "keypad1:C1", "esp:D19", "limegreen", [ "v77.06", "h-191.99", "v-13.55" ] ],
+    [ "keypad1:R4", "esp:RX2", "#8f4814", [ "v70.76", "h-175.65", "v-11.79" ] ],
+    [ "keypad1:R3", "esp:RX0", "limegreen", [ "v62.9", "h-159.27", "v-7.86" ] ],
+    [ "keypad1:R2", "esp:D4", "#8f4814", [ "v54.06", "h-140.93", "v-5.9" ] ],
+    [ "keypad1:R1", "esp:D23", "limegreen", [ "v47.18", "h-124.05", "v-9.83" ] ]
+  ]
+}
